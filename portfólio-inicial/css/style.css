@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap');
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* escopo global para armazenar funções cores e etc */
+:root{
+
+    /* -- os dois tracinhos significam a criação do nome da variavel */
+    --cor-primaria: black;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+body{
+    /* viewport-height(vh) = 100% da tela */
+    /* height: 100vh; */
+    /* box-sizing = faz o controle do body não sair da main */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15.1%;
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho-menu-link{
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    /* display: flex = fez todos os elementos ficarem inline */
+    display: flex;
+    /* align-items: center = alinha os itens ao centro */
+    align-items: center;
+    /* justify-content: space-between = cria uma margem entre uma div/section e outra */
+    justify-content: space-between;
+}
+
+.apresentacao-conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* para utilizarmos o gap precisamos estar com o display flex */
+    gap: 40px;
+}
+
+.fotopessoal{
+    width: 35%;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.fotopessoal:hover{
+    transform: scale(1.05);
+    transition: 1s;
+    cursor: pointer;
+}
+
+
+.apresentacao-conteudo-titulo{
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria)
+}
+
+.apresentacao-conteudo-texto{
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao-links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* utilizaremos o align items para alinhar os items conforme o flex-direction for escolhido, 
+    ou seja, se está na vertical alinha no meio da vertical */
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao-links-titulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao-links-link{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    /* o primeiro valor é para o do eixo vertical o segundo é horizontal */
+    padding: 21.5px 0px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    /* primeiro valor é o tamanho da borda
+       segundo valor é o estilo da borda
+       terceiro valor é a cor
+    */
+    border: 1px solid var(--cor-terciaria);
+}
+
+.apresentacao-links-link:hover{
+    background-color: var(--cor-hover);
+    transition: 1s;
+}
+
+/* responsividade */
+
+@media (max-width: 999px){
+    .fotopessoal{
+        justify-content: center;
+        width: 45%;
+        margin-bottom: 50px;
+    }
+    .cabecalho{
+        padding: 4%;
+    }
+    .cabecalho-menu{
+        justify-content: center;
+    }
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao-conteudo{
+        width: auto;
+    }
+}
+
+@media (max-width: 376px){
+    .fotopessoal{
+        border-radius: 50px;
+        width: 70%;
+    }
+}
+
